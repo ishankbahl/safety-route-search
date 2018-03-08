@@ -19,7 +19,7 @@ export default async function findNearbuy(coordinates, distance, map){
                         resolve(results); 
                     }
                     else {
-                        console.log("error");
+                        console.log(status);
                     }
                 });
             });

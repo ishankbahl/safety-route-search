@@ -11,7 +11,7 @@ async function calculatePath(startingPoint, destination, map){
     let coordinatesD = findCoordinates(destination);
     let coordinatesStarting = await coordinatesS;
     let coordinatesDestination = await coordinatesD;
-    const actualDistance = findDistance(coordinatesStarting, coordinatesDestination)*10000;
+    const actualDistance = findDistance(coordinatesStarting, coordinatesDestination)*1000;
     const waypointsRaw = await findNearbuy(coordinatesStarting, actualDistance, map);
     //const waypointsExtracted = extractWaypoints(waypointsRaw);
     const finalWaypoints = calculateWaypoints(waypointsRaw, coordinatesDestination);

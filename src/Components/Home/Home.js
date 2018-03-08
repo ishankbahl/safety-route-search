@@ -71,7 +71,6 @@ class Home extends React.Component{
 
         const { classes } = this.props;
         const { open, mapNode, directions } = this.state;
-        console.log(directions);
 
         return(
             <div className={ classes.root } >
