@@ -79,7 +79,7 @@ class Home extends React.Component{
                         <IconButton className={ classes.menuButton } color="inherit" aria-label="Menu">
                             <MenuIcon />
                         </IconButton>
-                        <Typography variant="title" color="inherit" className={ classes.flex } >SafeRoute</Typography>
+                        <Typography variant="title" color="inherit" className={ classes.flex } >Safe Route Search</Typography>
                         <Button color="inherit" onClick={ this.openDialog } >
                             Directions 
                             <Directions />
