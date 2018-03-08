@@ -32,10 +32,14 @@ class Home extends React.Component{
 
         this.state = {
             open: false,
+            mapNode: null,
+            directions: null,
         }
 
         this.openDialog = this.openDialog.bind(this);
         this.closeDialog = this.closeDialog.bind(this);
+        this.getMapNode = this.getMapNode.bind(this);
+        this.setDirections = this.setDirections.bind(this);
 
     }
 
@@ -46,13 +50,28 @@ class Home extends React.Component{
     }
 
     closeDialog() {
+
         this.setState({ open: false });
+
+    }
+
+    getMapNode(node){
+
+        this.setState({ mapNode: node });
+
+    }
+
+    setDirections(directions){
+
+        this.setState({ directions });
+
     }
 
     render(){
 
         const { classes } = this.props;
-        const { open } = this.state;
+        const { open, mapNode, directions } = this.state;
+        console.log(directions);
 
         return(
             <div className={ classes.root } >
@@ -68,8 +87,8 @@ class Home extends React.Component{
                         </Button>
                     </Toolbar>
                 </AppBar>
-                <Map />
-                <FormDialog open={ open } handleClose={ this.closeDialog } />
+                <Map getMapNode={ this.getMapNode } directions={ directions }  />
+                <FormDialog open={ open } handleClose={ this.closeDialog } map={ mapNode } setDirections={ this.setDirections } />
             </div>
         );
     }

@@ -24,10 +24,11 @@ class FormDialog extends React.Component{
 
     }
 
-    submitForm(){
-        this.props.handleClose();
+    submitForm = async () => {
+        const { handleClose, map, setDirections } = this.props;
+        handleClose();
         const { starting, destination } = this.state;
-        calculatePath(starting, destination);
+        setDirections(await calculatePath(starting, destination, this.props.map));
     }
     
     render(){

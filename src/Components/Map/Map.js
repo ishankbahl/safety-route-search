@@ -1,6 +1,6 @@
 import React from "react";
 import { compose, withProps } from "recompose"
-import { withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import { withGoogleMap, GoogleMap, DirectionsRenderer } from "react-google-maps"
 
 const MyMapComponent = compose(
   withProps({
@@ -14,8 +14,9 @@ const MyMapComponent = compose(
   <GoogleMap
     defaultZoom={15}
     defaultCenter={{ lat: 28.675723, lng: 77.112812 }}
+    ref={(node) => props.getMapNode(node)}
   >
-    {true && <Marker position={{ lat: 28.675723, lng: 77.112812 }} />}
+    {props.directions && <DirectionsRenderer directions={props.directions} />}
   </GoogleMap>
 );
 
